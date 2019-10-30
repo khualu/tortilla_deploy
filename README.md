@@ -48,3 +48,4 @@ In the same folder you're already working in, create a file called `config.json`
 ## Step 6 - Setting the path for pushing
 If you open `gulpfile.js`, you'll see in the deploy function that the path to push content to is set to `/domains/andrespinto.nl/public_html/wp-content/themes/divi-child`. 
 This might need to be changed for your server. This is the path from the root of my server to where the theme folder is. 
+

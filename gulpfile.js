@@ -36,8 +36,8 @@ function style() {
 }
 
 function watch () {
-    gulp.watch('./scss/**/*.scss', gulp.series('style', 'csscon'));
-    // gulp.watch('./js/**/*.js', 'jscon');
+    gulp.watch(['./scss/**/*.scss', './js/**/*.js'], gulp.series('style', 'csscon', 'jscon'));
+    // gulp.watch('./js/**/*.js', 'jscon', gulp.parallel('jscon'));
 }
 
 function deploy() {
@@ -49,7 +49,7 @@ function deploy() {
         log: gutil.log
     });
 
-    var globs = ['./style.css'];
+    var globs = ['./style.css', './main.js'];
 
     return gulp.src( globs, {base: '.', buffer: false})
         .pipe( conn.newer('/domains/andrespinto.nl/public_html/wp-content/themes/divi-child'))
